@@ -1,0 +1,78 @@
+1
+SESSION 2020
+MASTERE
+Modélisation SI
+DUREE : 4 h
+DOCUMENTS: tous autorisés
+Remarque :
+ Lisez attentivement l'énoncé.
+Programmation Orientée Objet
+JAVA
+2
+Exercice 1 :
+Calculatrice (6pts)
+Le but de cet exercice est d’écrire une application java, contenant une seule classe nommée Calculette qui affiche en boucle l’invite suivante à l’utilisateur :
+1. Somme de deux entiers
+2. Soustraction de deux entiers
+3. Multiplication de deux entiers
+4. Division de deux entiers
+5. Sortie du programme
+Veuillez entrer votre choix :
+Et qui attend un entier (entre 1 et 5) entré par l’utilisateur.
+Pour un choix entre 1 et 4, le programme demande ensuite à l’utilisateur d’entrer les deux entiers de l’opération à effectuer, puis affiche le résultat de l’opération.
+Si le choix 5 est entré, on sort du programme.
+Le code fourni doit être court et doit être obligatoirement placé dans le fichier source Calculette.java.
+Indications :
+En Java, une des possibilités pour lire ce que vous tapez au clavier, est d’utiliser un objet instancié de la classe Scanner du package java.util de la manière suivante :
+Scanner sc = new Scanner(System.in);
+System.out.println("Veuillez saisir un mot :");
+String str = sc.nextLine();
+System.out.println("Vous avez saisi : " + str);
+Cela donne à l’exécution :
+Veuillez saisir un mot :
+toto
+Vous avez daisie : toto
+3
+Exercice 2 :
+Nombre d’occurrences d’un mot dans un fichier (6pts)
+Il s'agit de réaliser une application Java NBOcc.java permettant de compter le nombre d'occurrence d'un mot donné dans un fichier donné. Le nom du fichier et le mot seront sur la ligne de commande.
+Exemple d’utilisation :
+----- > Java NBOcc toto.txt il
+----- > Le mot « il » figure 60 fois fans le fichier « toto.txt »
+Exercice 3 :
+Interface graphique en Java (8 pts)
+Ecrire l’applet Dessin.java Java suivante :
+ Une fenêtre apparaît avec au centre un petit carré.
+ Ce petit carré peut être déplacé en cliquant dessus puis en bougeant la souris avec le bouton enfoncé. On peut donc faire un « drag and drop » de ce carré
+4
+Exercice 4:
+Tracé d’une trajectoire (8 pts)
+On souhaite dans cette exercice, tracer à l’aide du langage Java, une trajectoire d’un objet à partir de ses positions XY stockés dans un fichier texte « positions.txt » sous la forme suivante :
+xx :yy
+xx :yy
+--
+etc
+où xx et yy sont deux chaînes de caractères correspondants aux positions X et Y et séparées par « : ».
+Question 1
+Ecrire un Frame (Trajectoire.java) reproduisant la trajectoire de l’objet à partir des positions X et Y. Le tracé de cette trajectoire sera déclenché avec l’appui sur un bouton « tracer » sur ce Frame.
+Question 2
+Si on considère que le fichier « positions.txt » est régénéré toutes les 20 ms, Réécrire le Frame précédant (Trajectoire2.java) pour créer une animation.
+Exercice 5 :
+Interface graphique et Flot d’entrées sorties (12 pts)
+Le but de cet exercice est d’écrire une interface graphique permettant à un utilisateur de modifier son mot de passe :
+L'utilisateur saisit son mot de passe actuel. Il tape 2 fois un nouveau mot de passe.
+Pour modifier son mot de passe, l’utilisateur doit cliquer sur le bouton "Lancer la modification".
+Si l'utilisateur a tapé correctement son mot de passe actuel et 2 fois le même nouveau mot de passe, celui-ci devient son nouveau mot de passe.
+5
+Remarques : pour que les mots de passe ne s'affichent pas, vous pouvez utiliser la classe JPasswordField après avoir saisi la ligne : import javax.swing.JPasswordField au début de votre code.
+La classe TextField sera utilisée pour la saisie du nom de login, et le bouton sera placé en bas pour le lancement la modification du mot de passe.
+Question 1 (2 pts):
+Reproduire à l’aide d’un Frame JAVA l’aspect de l’interface ci-dessus. On tachera à respecter scrupuleusement les gestionnaires de position utilisés.
+Question 2 (3 pts):
+Sachant que les noms de login et les mots de passe sont sauvegardés dans un fichier « passwd.txt » sous la forme « login :passwd » (un login par ligne), ajoutez au Frame précédent la méthode « boolean veriFier (String nom, String pass) » prenant en paramètres deux chaines de caractères et qui retourne true si la chaîne « pass » correspond au mot de passe du login « nom »; false sinon.
+Question 3 (1 pt):
+Ajoutez au Frame précédent la méthode « boolean estIdentique (String str, String str1) » prenant en paramètres deux chaines de caractères et qui retourne true si les deux chaînes sont identiques, false sinon.
+Question 4 (4pts):
+Ajoutez au Frame précédent la méthode « void remPlace (File f, String ligne1, String ligne2) » permettant de remplacer la ligne « ligne1 » (si elle existe dans le fichier f) par la ligne « ligne2 ».
+Question 5 (2 pts):
+Implémenter la méthode actionPerformed(ActionEvent e) associée au bouton « Lancer la modification ».
