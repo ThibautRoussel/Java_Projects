@@ -66,7 +66,8 @@ public class CliTEL2 extends Frame implements Runnable, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		try {
-			versServeur.println(name.getText());
+			nom = name.getText();
+			versServeur.println(nom);
 
 		} catch (Exception er) {
 			er.toString();
@@ -83,12 +84,12 @@ public class CliTEL2 extends Frame implements Runnable, ActionListener {
 				if (ligne == null) {
 					fini = true;
 				} else if (ligne.startsWith("Aucune")) {
-					String rep = MsgBox2.getNomPrenomTel(this, "message");
+					String rep = MsgBox2.getNomPrenomTel(this, nom);
 					if (!rep.contains("false")) {
 						versServeur.println(rep);
 					}
 				} else if (ligne.startsWith("Pas de")){
-					String rep = MsgBox2.getPrenomTel(this, "message");
+					String rep = MsgBox2.getPrenomTel(this, pren);
 					if (!rep.contains("false")) {
 						versServeur.println(rep);
 					}
@@ -101,9 +102,10 @@ public class CliTEL2 extends Frame implements Runnable, ActionListener {
 						versServeur.println("quit");
 					}
 				} else if (ligne.contains("needName")) {
-					String rep = MsgBox2.affPrenomMsg(this, "message");
+					String rep = MsgBox2.affPrenomMsg(this, "");
 					if (!rep.contains("false")) {
-						versServeur.println(rep);
+						pren = rep;
+						versServeur.println("+" + pren);
 					}
 				} else {
 					StringTokenizer st = new StringTokenizer(ligne, ":", false);

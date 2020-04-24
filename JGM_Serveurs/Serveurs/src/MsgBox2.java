@@ -26,6 +26,7 @@ class MsgBox2 extends Dialog implements ActionListener {
 		if (mode == true) { // mode prenom
 			l = new Label("Prénom :");
 			prenom = new TextField(10);
+			prenom.setText(msg);
 			p1.add(l);
 			p1.add(prenom);
 			if (b_tel == true) {
@@ -37,6 +38,7 @@ class MsgBox2 extends Dialog implements ActionListener {
 		} else {
 			l = new Label("Nom :");
 			nom = new TextField(10);
+			nom.setText(msg);
 			p1.add(l);
 			p1.add(nom);
 
@@ -84,7 +86,7 @@ class MsgBox2 extends Dialog implements ActionListener {
 		if (message.prenom.getText().isEmpty()) {
 			rep = "false";
 		} else {
-			rep = "+" + message.nom.getText();
+			rep = message.prenom.getText();
 		}
 		return rep;
 	}

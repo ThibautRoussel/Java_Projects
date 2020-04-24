@@ -98,7 +98,7 @@ public class My_TEL2 implements Runnable {
 					prenom = st.nextToken();
 					String strp = nom + "_" + prenom;
 					String phonep = (String) dico.get(strp);
-					if (isNameExist(prenom) == true) {
+					if (isPrenomExist(nom, prenom) == true) {
 						versClient.println(nom + ":" + prenom + ":" + phonep);
 						System.out.println(nom + ":" + prenom + ":" + phonep);
 					} else {
@@ -194,13 +194,31 @@ public class My_TEL2 implements Runnable {
 		return nb;
 	}
 
-	public boolean isNameExist(String str) {
+	/*public boolean isNameExist(String str) {
 		boolean b = false;
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(filename)));
 			String lines = "";
 			while (null != (lines = br.readLine())) {
 				if (lines.contains(str)) {
+					b = true;
+				}
+			}
+			br.close();
+
+		} catch (IOException e) {
+			e.toString();
+		}
+		return b;
+	}*/
+	
+	public boolean isPrenomExist(String nom, String str) {
+		boolean b = false;
+		try {
+			br = new BufferedReader(new InputStreamReader(new FileInputStream(filename)));
+			String lines = "";
+			while (null != (lines = br.readLine())) {
+				if (lines.startsWith(nom) && lines.contains(str)) {
 					b = true;
 				}
 			}
